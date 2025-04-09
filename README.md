@@ -23,3 +23,11 @@ We would like to share essential information our scheduler needs to do are below
 2. w_t workload (combination of s_t) : What jobs are currently running , waiting, requrirements, priorities
 3. e_t Renewable energy: How much RE is available currenlty or predicted shortly
 4. r_t resource usage: How busys DCs servers and networks , these are resource utilization
+
+Our scheduler will be output as the decision it is we denoted as a_t : action (scheduling decision) like assigning job a to server b and deploying job c in a give s_t.
+In our scheduler (with MDP framework), it will be solved scheduling problems shown in below
+1. State transitions: Next state depends on the current state , the action scheduler take a_t, unpredictable random factors like sudden job will arrive otherwise weather changing like cloud cover
+2. Cost function: This is what we want to minimize each step: Brown energy consumption, penalties for violating constraints( SLAs or resource limits) : This is for our scheduler performance
+3. Constraints: Our scheduler must meet: not exceeding server CPU limits and consumer power drawn matches power used
+We have been used RL algorithms to learn the best scheduling policy in simulation
+We have been used to gurantee our algorithm is good and reliable regarding the quality and reliability of the learned solution.
