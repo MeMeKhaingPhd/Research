@@ -6,7 +6,7 @@ const path = require('path'); // Helps work with file paths
 const app = express();
 
 // Define the port number the server will listen on
-const PORT = 3000; // You can use any available port
+const PORT = process.env.PORT || 3000; // You can use any available port
 
 // --- MIDDLEWARE ---
 // Serve static files (CSS, images, client-side JS)
@@ -33,4 +33,8 @@ app.get('/resume', (req, res) => {
 // --- START THE SERVER ---
 app.listen(PORT, () => {
   console.log(`Server started successfully on http://localhost:${PORT}`);
+});
+// Route for the Contact page ('/contact')
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'contact.html'));
 });
