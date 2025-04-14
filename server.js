@@ -25,7 +25,11 @@ app.get('/about', (req, res) => {
   // Send the about.html file as the response
   res.sendFile(path.join(__dirname, 'views', 'about.html'));
 });
-
+// Route for the Resume page ('/resume')
+app.get('/resume', (req, res) => {
+    // Send the resume.html file as the response
+    res.sendFile(path.join(__dirname, 'views', 'resume.html'));
+});
 // --- START THE SERVER ---
 app.listen(PORT, () => {
   console.log(`Server started successfully on http://localhost:${PORT}`);
