@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Certificates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#" id="certificatesMenuLink">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page-section">
+            <h1>Welcome to My Portfolio</h1>
+            <p>This is the home section.</p>
+        </section>
+
+        <section id="about" class="page-section" style="display: none;">
+            <h2>About Me</h2>
+            <p>Information about me.</p>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificatesSection" class="page-section" style="display: none;">
+            <h2>My Certificates</h2>
+
+            <div id="certificateList">
+                <!-- Certificates will be added here by JavaScript -->
+                <!-- Example of how a certificate might look (can be pre-filled or added dynamically) -->
+                <!--
+                <div class="certificate-item">
+                    <img src="images/sample-cert.png" alt="Sample Certificate">
+                    <h3>Awesome Certification Name</h3>
+                    <p><strong>Issuer:</strong> Credible Institution</p>
+                    <p><strong>Date:</strong> 2023-01-15</p>
+                    <a href="#" target="_blank" class="view-link">View Certificate</a>
+                </div>
+                -->
+            </div>
+
+            <button id="showAddCertFormBtn">Add New Certificate</button>
+
+            <div id="addCertificateFormContainer" style="display: none;">
+                <h3>Add a New Certificate</h3>
+                <form id="newCertificateForm">
+                    <div>
+                        <label for="certTitle">Title:</label>
+                        <input type="text" id="certTitle" name="certTitle" required>
+                    </div>
+                    <div>
+                        <label for="certIssuer">Issuer:</label>
+                        <input type="text" id="certIssuer" name="certIssuer" required>
+                    </div>
+                    <div>
+                        <label for="certDate">Date Issued:</label>
+                        <input type="date" id="certDate" name="certDate" required>
+                    </div>
+                    <div>
+                        <label for="certImage">Image URL/Path:</label>
+                        <input type="text" id="certImage" name="certImage" placeholder="e.g., images/my-cert.png or https://example.com/cert.jpg" required>
+                    </div>
+                    <div>
+                        <label for="certLink">Verification Link (Optional):</label>
+                        <input type="url" id="certLink" name="certLink" placeholder="https://www.credly.com/your-badge">
+                    </div>
+                    <button type="submit">Save Certificate</button>
+                    <button type="button" id="cancelAddCertBtn">Cancel</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section" style="display: none;">
+            <h2>Contact Me</h2>
+            <p>Contact details here.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

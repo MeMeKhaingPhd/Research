@@ -35,6 +35,11 @@ app.get('/contact', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'contact.html'));
 });
 // --- START THE SERVER ---
+// Route for the Contact page ('/contact')
+app.get('/certificate', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'certificate.html'));
+});
+// --- START THE SERVER ---
 app.listen(PORT, () => {
   console.log(`Server started successfully on http://localhost:${PORT}`);
 });
