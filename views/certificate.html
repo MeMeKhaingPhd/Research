@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Certificates</title>
+    <title>My Certificates</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,80 +11,92 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <!-- Add other menu items if you have them, e.g., Home, About -->
+                <!-- <li><a href="#home">Home</a></li> -->
                 <li><a href="#" id="certificatesMenuLink">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="page-section">
-            <h1>Welcome to My Portfolio</h1>
-            <p>This is the home section.</p>
-        </section>
-
-        <section id="about" class="page-section" style="display: none;">
-            <h2>About Me</h2>
-            <p>Information about me.</p>
-        </section>
+        <!-- Other sections of your page can go here and be hidden/shown by JS -->
+        <!-- <section id="home" class="page-section">...</section> -->
 
         <!-- Certificates Section -->
         <section id="certificatesSection" class="page-section" style="display: none;">
             <h2>My Certificates</h2>
 
-            <div id="certificateList">
-                <!-- Certificates will be added here by JavaScript -->
-                <!-- Example of how a certificate might look (can be pre-filled or added dynamically) -->
-                <!--
-                <div class="certificate-item">
-                    <img src="images/sample-cert.png" alt="Sample Certificate">
-                    <h3>Awesome Certification Name</h3>
-                    <p><strong>Issuer:</strong> Credible Institution</p>
-                    <p><strong>Date:</strong> 2023-01-15</p>
-                    <a href="#" target="_blank" class="view-link">View Certificate</a>
-                </div>
-                -->
+            <div id="certificateActions">
+                <button id="showAddImageCertFormBtn">Add Image Certificate</button>
+                <button id="showAddPdfCertFormBtn">Add PDF Certificate</button>
             </div>
 
-            <button id="showAddCertFormBtn">Add New Certificate</button>
-
-            <div id="addCertificateFormContainer" style="display: none;">
-                <h3>Add a New Certificate</h3>
-                <form id="newCertificateForm">
+            <!-- Form for Adding Image Certificate -->
+            <div id="addImageCertificateFormContainer" class="form-container" style="display: none;">
+                <h3>Add New Image Certificate</h3>
+                <form id="newImageCertificateForm">
                     <div>
-                        <label for="certTitle">Title:</label>
-                        <input type="text" id="certTitle" name="certTitle" required>
+                        <label for="imgCertTitle">Title:</label>
+                        <input type="text" id="imgCertTitle" name="imgCertTitle" required>
                     </div>
                     <div>
-                        <label for="certIssuer">Issuer:</label>
-                        <input type="text" id="certIssuer" name="certIssuer" required>
+                        <label for="imgCertIssuer">Issuer:</label>
+                        <input type="text" id="imgCertIssuer" name="imgCertIssuer" required>
                     </div>
                     <div>
-                        <label for="certDate">Date Issued:</label>
-                        <input type="date" id="certDate" name="certDate" required>
+                        <label for="imgCertDate">Date Issued:</label>
+                        <input type="date" id="imgCertDate" name="imgCertDate" required>
                     </div>
                     <div>
-                        <label for="certImage">Image URL/Path:</label>
-                        <input type="text" id="certImage" name="certImage" placeholder="e.g., images/my-cert.png or https://example.com/cert.jpg" required>
+                        <label for="certImageFile">Certificate Image File:</label>
+                        <input type="file" id="certImageFile" name="certImageFile" accept="image/*" required>
                     </div>
                     <div>
-                        <label for="certLink">Verification Link (Optional):</label>
-                        <input type="url" id="certLink" name="certLink" placeholder="https://www.credly.com/your-badge">
+                        <label for="imgCertLink">Verification Link (Optional):</label>
+                        <input type="url" id="imgCertLink" name="imgCertLink">
                     </div>
-                    <button type="submit">Save Certificate</button>
-                    <button type="button" id="cancelAddCertBtn">Cancel</button>
+                    <button type="submit">Save Image Certificate</button>
+                    <button type="button" class="cancelBtn">Cancel</button>
                 </form>
             </div>
-        </section>
 
-        <section id="contact" class="page-section" style="display: none;">
-            <h2>Contact Me</h2>
-            <p>Contact details here.</p>
+            <!-- Form for Adding PDF Certificate -->
+            <div id="addPdfCertificateFormContainer" class="form-container" style="display: none;">
+                <h3>Add New PDF Certificate</h3>
+                <form id="newPdfCertificateForm">
+                    <div>
+                        <label for="pdfCertTitle">Title:</label>
+                        <input type="text" id="pdfCertTitle" name="pdfCertTitle" required>
+                    </div>
+                    <div>
+                        <label for="pdfCertIssuer">Issuer:</label>
+                        <input type="text" id="pdfCertIssuer" name="pdfCertIssuer" required>
+                    </div>
+                    <div>
+                        <label for="pdfCertDate">Date Issued:</label>
+                        <input type="date" id="pdfCertDate" name="pdfCertDate" required>
+                    </div>
+                    <div>
+                        <label for="certPdfFile">Certificate PDF File:</label>
+                        <input type="file" id="certPdfFile" name="certPdfFile" accept=".pdf" required>
+                    </div>
+                    <div>
+                        <label for="pdfCertLink">Verification Link (Optional):</label>
+                        <input type="url" id="pdfCertLink" name="pdfCertLink">
+                    </div>
+                    <button type="submit">Save PDF Certificate</button>
+                    <button type="button" class="cancelBtn">Cancel</button>
+                </form>
+            </div>
+
+            <div id="certificateList">
+                <!-- Certificates will be added here by JavaScript -->
+            </div>
         </section>
     </main>
 
     <script src="script.js"></script>
+    <!-- If you want to use localStorage for persistence across refreshes (client-side only) -->
+    <!-- <script src="localStorageHandler.js"></script> -->
 </body>
 </html>
